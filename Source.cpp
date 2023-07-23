@@ -16,35 +16,35 @@ int main() {
 	window.setMouseCursorVisible(true);
 
 	sf::SoundBuffer buffershuffle;
-	buffershuffle.loadFromFile("C:\\Users\\ccll7\\Desktop\\SFML Files\\shuffling.wav");
+	buffershuffle.loadFromFile("Assets\\shuffling.wav");
 	
 	sf::Sound shuffle;
 	shuffle.setBuffer(buffershuffle);
 	shuffle.setVolume(50);
 
 	sf::Font font;
-	font.loadFromFile("C:\\Users\\ccll7\\Desktop\\SFML Files\\Diana Zetta.ttf");
+	font.loadFromFile("Assets\\Diana Zetta.ttf");
 
 	sf::Texture decktexture;
-	decktexture.loadFromFile("C:\\Users\\ccll7\\Desktop\\SFML Files\\deck.png");
+	decktexture.loadFromFile("Assets\\deck.png");
 
 	sf::Texture hitbuttontexture;
-	hitbuttontexture.loadFromFile("C:\\Users\\ccll7\\Desktop\\SFML Files\\hitbutton.png");
+	hitbuttontexture.loadFromFile("Assets\\hitbutton.png");
 
 	sf::Texture hitbuttontexture2;
-	hitbuttontexture2.loadFromFile("C:\\Users\\ccll7\\Desktop\\SFML Files\\hitbutton2.png");
+	hitbuttontexture2.loadFromFile("Assets\\hitbutton2.png");
 
 	sf::Texture standbuttontexture;
-	standbuttontexture.loadFromFile("C:\\Users\\ccll7\\Desktop\\SFML Files\\standbutton.png");
+	standbuttontexture.loadFromFile("Assets\\standbutton.png");
 
 	sf::Texture standbuttontexture2;
-	standbuttontexture2.loadFromFile("C:\\Users\\ccll7\\Desktop\\SFML Files\\standbutton2.png");
+	standbuttontexture2.loadFromFile("Assets\\standbutton2.png");
 
 	sf::Texture dealbuttontexture;
-	dealbuttontexture.loadFromFile("C:\\Users\\ccll7\\Desktop\\SFML Files\\dealbutton.png");
+	dealbuttontexture.loadFromFile("Assets\\dealbutton.png");
 
 	sf::Texture dealbuttontexture2;
-	dealbuttontexture2.loadFromFile("C:\\Users\\ccll7\\Desktop\\SFML Files\\dealbutton2.png");
+	dealbuttontexture2.loadFromFile("Assets\\dealbutton2.png");
 
 	sf::Text text;
 	text.setFont(font);
@@ -170,6 +170,7 @@ int main() {
 					if ((mousepos.x >= 460 && mousepos.x <= 660) && (mousepos.y >= 200 && mousepos.y <= 300)) {
 						if (dealt == false) {
 							for (int i = 0; i < 4; i++) {
+								shuffle.play();
 								drawx = rand() % 13;
 								drawy = rand() % 4;
 								cards.push_back(sf::RectangleShape(card));
